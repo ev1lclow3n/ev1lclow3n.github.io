@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evil Tools</title>
+    <title>Matrix Rain</title>
     <style>
         /* Basic Reset */
         * {
@@ -141,9 +141,9 @@
         <div class="content">
             <div class="box">
                 <div class="button-container">
-                    <button class="btn" onclick="window.location.href='https://ev1lclow3n.github.io/evil_dork/'">Dork</button>
-                    <button class="btn" onclick="window.location.href='https://ev1lclow3n.github.io/evil_recon/'">Recon</button>
-                    <button class="btn" onclick="window.location.href='https://ev1lclow3n.github.io/evil_fuzzer/'">Fuzzer</button>
+                    <button class="btn" onclick="window.location.href='https://github.com'">GitHub</button>
+                    <button class="btn" onclick="window.location.href='#'">Recon</button>
+                    <button class="btn" onclick="window.location.href='#'">More</button>
                 </div>
             </div>
         </div>
@@ -156,8 +156,17 @@
         const canvas = document.getElementById("matrix-canvas");
         const ctx = canvas.getContext("2d");
 
-        canvas.height = window.innerHeight;
-        canvas.width = window.innerWidth;
+        // Dynamically set canvas size on window resize
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        // Listen for resize events to update canvas size
+        window.addEventListener('resize', resizeCanvas);
+
+        // Initial canvas size setup
+        resizeCanvas();
 
         const columns = canvas.width / 20;
         const drops = Array(columns).fill(0);
